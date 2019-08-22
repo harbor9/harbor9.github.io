@@ -1,0 +1,96 @@
+*{
+	--page-background-color: #cfd7e7;
+	--form-background-color: #f9f9f9;
+	--form-border-color: #f9f9f9;
+	--form-input-border-color: #9c9c9c;
+    --form-input-background: #fff;
+    --form-input-valid-color: #358fe4;
+    --white-color: #ffffff;
+    --button-color: #18bc9c;
+	font-family: Roboto, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-auto-rows: 75px;
+    grid-auto-flow: dense;
+}
+
+.horizontal {
+    grid-column: span 2;
+}
+
+.vertical {
+    grid-row: span 2;
+}
+
+.big {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #ffeead;
+}
+
+.container > div > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+form {
+    display: grid;
+    background: var(--form-background-color);
+    border: 1px solid var(--form-border-color);
+    margin: 1rem auto 1 auto;
+    padding: 1em;
+}
+form input {
+    background: var(--form-input-background);
+    border: 1px solid var(--form-input-border-color);
+}
+form button {
+    margin-top: 2em;
+    color: var(--white-color);
+    background-color: var(--button-color);
+    border-color: var(--button-color);
+    padding: 0.7em;
+    border: 0px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+form button:hover {
+    background-color: #128f76;
+    border-color: #11866f;
+}
+
+label {
+    padding: 0.5em 0.5em 0.5em 0;
+}
+
+input {
+    padding: 0.7em;
+    margin-bottom: 0.5rem;
+}
+
+form input:valid {
+    border-color:var(--form-input-valid-color);
+}
+
+/*form input:invalid {
+    border-color:#f00;
+}
+*/
+
+html, body {
+    background-color: var(--page-background-color);
+    margin: 10px;
+}
