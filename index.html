@@ -8,10 +8,21 @@
 </head>
 <body>
 
+<script>
+    function allertWithLanguage() {
+        var language = (navigator.languages && navigator.languages.length) ? navigator.languages[0] : navigator.language;
+        alert(language);
+    }
+</script>
+
 <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 <link rel="stylesheet" href="style.css"/>
 
 <h1>This is the Harbor9 Page!</h1>
+
+<button onclick="allertWithLanguage()">Click</button>
+
+<h2>(navigator.languages && navigator.languages.length) ? navigator.languages[0] : navigator.language;</h2>
 
 <!--//TODO
 https://www.youtube.com/watch?v=t6CBKf8K_Ac&feature=youtu.be&t=1747-->
