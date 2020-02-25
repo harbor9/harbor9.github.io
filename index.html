@@ -81,28 +81,32 @@
     </section>
 
     <section class="intro" id="form">
-        <h2>Send a Request</h2>
-        <form>
-            <label for="name">Name:</label>
-            <input id="name" required minlength="3" autocomplete="off" placeholder="e.g. Joe Bloggs" title="Name?"/>
+        <div>
+            <h2>Send a Request</h2>
+        </div>
+        <div>
+            <form>
+                <label for="name">Name:</label>
+                <input id="name" required minlength="3" autocomplete="off" placeholder="e.g. Joe Bloggs" title="Name?"/>
 
-            <label for="dateFrom">Date From:</label>
-            <input id="dateFrom" required type="date" title="Please make sure the date is in the future"/>
+                <label for="dateFrom">Date From:</label>
+                <input id="dateFrom" required type="date" title="Please make sure the date is in the future"/>
 
-            <label for="dateTo">Date To:</label>
-            <input id="dateTo" required type="date" title="Please make sure the date is after Date From."/>
+                <label for="dateTo">Date To:</label>
+                <input id="dateTo" required type="date" title="Please make sure the date is after Date From."/>
 
-            <label for="email">Email</label>
-            <input id="email" required type="email" autocomplete="off" placeholder="Please provide your email" title="We will contact you on this address"/>
+                <label for="email">Email</label>
+                <input id="email" required type="email" autocomplete="off" placeholder="Please provide your email" title="We will contact you on this address"/>
 
-            <label for="phone">Phone Number</label>
-            <input id="phone" required type="tel" placeholder="Please provide your mobile number" title="Please make sure the input conforms to pattern ${tokenPrefixAllowedPattern}"/>
+                <label for="phone">Phone Number</label>
+                <input id="phone" required type="tel" placeholder="Please provide your mobile number" title="Please make sure the input conforms to pattern ${tokenPrefixAllowedPattern}"/>
 
-            <label for="comments">Any Comments?</label>
-            <input id="comments" maxlength="200" minlength="5" placeholder="Message for us?" title="Please make sure the input conforms to pattern ${tokenPrefixAllowedPattern}"/>
+                <label for="comments">Any Comments?</label>
+                <input id="comments" maxlength="200" minlength="5" placeholder="Message for us?" title="Please make sure the input conforms to pattern ${tokenPrefixAllowedPattern}"/>
 
-            <button id="send" type="submit" >Submit</button>
-        </form>
+                <button id="send" type="submit" >Submit</button>
+            </form>
+        </div>
     </section>
 
     <section class="intro" id="where">
