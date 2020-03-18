@@ -12,7 +12,7 @@ const enConfig = {
 
 const deConfig = {
     welcome: "Willkommen",
-    title: "Dies ist die Website der Ferienwohnung Harbor9!",
+    title: "Die ist die Website der Ferienwohnung Harbor9!",
     goodbye: "Auf Wiedersehen "
 }
 
