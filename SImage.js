@@ -5,7 +5,7 @@ export default class SImage extends HTMLElement {
     }
 
     connectedCallback() {
-      this.innerHTML = `<img id="myImg" src="${this.photoId}n.jpg" onclick="setImage('${this.photoId}n.jpg')">`;
+      this.innerHTML = `<img id="myImg" src="${this.photoId}w.jpg" onclick="setImage('${this.photoId}','c.jpg')">`;
     }
   }
 

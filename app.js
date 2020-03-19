@@ -11,8 +11,7 @@ navLinks.forEach(link => {
     })
 })
 
-function setImage(src = "") {
-    console.log("Hello world! " + src);
+function setImage(src = "", sufix = "w.jpg") {
 
     var modal = document.getElementById('myModal');
 
@@ -21,7 +20,7 @@ function setImage(src = "") {
     var modalImg = document.getElementById("imgPreview");
     var captionText = document.getElementById("caption");
     modal.style.display = "block";
-    modalImg.src = "https://live.staticflickr.com/1889/42676514890_a460f56471_c.jpg"
+    modalImg.src = src + sufix
     captionText.innerHTML = img.alt;
 
     // Get the <span> element that closes the modal
