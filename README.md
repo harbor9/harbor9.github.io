@@ -10,6 +10,7 @@ Harbor9 Appartment Page https://harbor9.github.io/
   * google maps
   * form/contact
   * galerry
+  * calendar
 
 # How page was created
 
