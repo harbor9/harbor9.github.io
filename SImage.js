@@ -3,7 +3,7 @@ export default class SImage extends HTMLElement {
       super();
       this.photoId = this.getAttribute("photoId") || "sid";
       this.class = this.getAttribute("class") || "big";
-      this.previewSize = this.getAttribute("previewSize") || "w";
+      this.previewSize = this.getAttribute("previewSize") || "n";
     }
 
     connectedCallback() {
