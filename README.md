@@ -15,7 +15,7 @@ Harbor9 Appartment Page https://harbor9.github.io/
 # How page was created
 
 * Big thanks to [@gurukulkarni](https://github.com/gurukulkarni) who shared his knowledge, experience and time
-* This tutorials were very helpful:
+* This pages were very helpful:
   * https://www.webcomponents.org/
   * https://scrimba.com/p/pvwkvhx/czk8deu9
   * https://www.w3schools.com/css/tryit.asp?filename=trycss_image_modal_js
