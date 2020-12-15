@@ -1,18 +1,18 @@
 const plConfig = {
     welcome: "Witamy",
-    title: "To jest strona Apartamentu Harbor9!",
-    goodbye: "Zegnamy"
+    title: "Apartament Harbor 9 w Kołobrzegu",
+    goodbye: "Żegnamy"
 }
 
 const enConfig = {
     welcome: "Welcome",
-    title: "This is the website of the Harbor9 Apartment!",
+    title: "Harbor 9 Apartment in Colberg",
     goodbye: "Goodbye"
 }
 
 const deConfig = {
-    welcome: "Willkommen",
-    title: "Die ist die Website der Ferienwohnung Harbor9!",
+    welcome: "Herzlich Willkommen",
+    title: "Harbor 9 Apartment in Colberg",
     goodbye: "Auf Wiedersehen "
 }
 
