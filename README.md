@@ -18,4 +18,8 @@ Harbor9 Appartment Page https://harbor9.github.io/
 * This pages were very helpful:
   * https://www.webcomponents.org/
   * https://scrimba.com/p/pvwkvhx/czk8deu9
-  * https://www.w3schools.com/css/tryit.asp?filename=trycss_image_modal_js
+  * https://www.w3schools.com/css/tryit.asp?filename=trycss_ima3ge_modal_js
+
+# What was used:
+
+* icons are from: https://tabler-icons.io/
