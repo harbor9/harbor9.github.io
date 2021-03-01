@@ -29,5 +29,10 @@ function setImage(src = "", sufix = "w.jpg") {
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
         modal.style.display = "none";
+        document.getElementById("imgPreview").src = '';
     }
+
+    // Get the <span> element that show the image on the right (previous)
+
+    // Get the <span> element that show the image on the left (next)
 }
