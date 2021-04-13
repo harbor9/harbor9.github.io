@@ -24,3 +24,8 @@ Harbor9 Appartment Page https://harbor9.github.io/
 # What was used:
 
 * icons are from: https://tabler-icons.io/
+
+# Local development
+
+* nvm use v10.16.3
+* browser-sync --server . --files . --no-ui --no-notify

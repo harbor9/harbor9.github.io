@@ -561,6 +561,28 @@ header {
     to {transform: scale(1)}
   }
 
+ /* Next Image */
+ .nextImg {
+  position: absolute;
+  top: 15px;
+  left: 60%;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+ }
+
+  /* Previous Image */
+  .previousImg {
+    position: absolute;
+    top: 15px;
+    left: 40%;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+   }
+
   /* The Close Button */
   .close {
     position: absolute;
@@ -574,7 +596,7 @@ header {
 
   .close:hover,
   .close:focus {
-    color: #bbb;
+    color: #737373;
     text-decoration: none;
     cursor: pointer;
   }
