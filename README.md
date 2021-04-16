@@ -11,7 +11,7 @@ Harbor9 Appartment Page https://harbor9.github.io/
   * form/contact
   * galerry
   * calendar
-  * urls to airbnb & booking
+  * urls to airbnb & booking (widgets)
 * switching between images in gallery (left,right) ✗
 
 # How page was created
