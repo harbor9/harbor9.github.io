@@ -22,6 +22,8 @@ Harbor9 Appartment Page <https://harbor9.github.io/>
   * <https://scrimba.com/p/pvwkvhx/czk8deu9>
   * <https://www.w3schools.com/css/tryit.asp?filename=trycss_ima3ge_modal_js>
   * <https://css-tricks.com/zooming-images-in-a-grid-layout/>
+  * <https://codepen.io/prathkum/pen/qBqGepq>
+  * <https://codepen.io/prathkum/pen/QWpKJPz>
 
 ## What was used
 
