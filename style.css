@@ -1,13 +1,15 @@
-*{
-	--page-background-color: #cfd7e7;
-	--form-background-color: #f9f9f9;
-	--form-border-color: #f9f9f9;
-	--form-input-border-color: #9c9c9c;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@900&display=swap');
+
+* {
+    --page-background-color: #cfd7e7;
+    --form-background-color: #f9f9f9;
+    --form-border-color: #f9f9f9;
+    --form-input-border-color: #9c9c9c;
     --form-input-background: #fff;
     --form-input-valid-color: #358fe4;
     --white-color: #ffffff;
     --button-color: #18bc9c;
-	font-family: Roboto, sans-serif;
+    font-family: Roboto, sans-serif;
 }
 
 .container {
@@ -31,7 +33,7 @@
     grid-row: span 2;
 }
 
-.container > div {
+.container>div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +41,7 @@
     color: #ffeead;
 }
 
-.container > div > img {
+.container>div>img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -62,7 +64,9 @@
     --fw-reg: 300;
     --fw-bold: 900;
 
-    --clr-light: #fff;
+    --clr-light: rgb(185, 189, 189);
+    --clr-light-2: rgb(187, 189, 189);
+    --clr-light-3: rgb(189, 189, 189);
     --clr-dark: #303030;
     --clr-accent: #16e0bd;
 
@@ -71,8 +75,8 @@
     --fs-h3: 1.25rem;
     --fs-body: 1rem;
 
-    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
-          0.125em 0.125em 0.25em rgba(0,0,0,.15);
+    --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, .25),
+        0.125em 0.125em 0.25em rgba(0, 0, 0, .15);
 }
 
 @media (min-width: 800px) {
@@ -87,7 +91,8 @@
 /* General styles */
 
 body {
-    background: var(--clr-light);
+    background: linear-gradient(to right, var(--clr-light), var(--clr-light-2), var(--clr-light-3));
+    /* background: var(--clr-light); */
     color: var(--clr-dark);
     margin: 0;
     font-family: var(--ff-primary);
@@ -105,7 +110,9 @@ img {
     max-width: 100%;
 }
 
-strong { font-weight: var(--fw-bold) }
+strong {
+    font-weight: var(--fw-bold)
+}
 
 :focus {
     outline: 3px solid var(--clr-accent);
@@ -141,9 +148,17 @@ h3 {
     margin: 0;
 }
 
-h1 { font-size: var(--fs-h1) }
-h2 { font-size: var(--fs-h2) }
-h3 { font-size: var(--fs-h3) }
+h1 {
+    font-size: var(--fs-h1)
+}
+
+h2 {
+    font-size: var(--fs-h2)
+}
+
+h3 {
+    font-size: var(--fs-h3)
+}
 
 
 .section__title {
@@ -285,8 +300,13 @@ header {
     right: 0;
 }
 
-.hamburger::before { top: 6px; }
-.hamburger::after { bottom: 6px; }
+.hamburger::before {
+    top: 6px;
+}
+
+.hamburger::after {
+    bottom: 6px;
+}
 
 
 /*  Intro section  */
@@ -378,7 +398,7 @@ header {
         margin-right: auto;
     }
 
-    .service + .service {
+    .service+.service {
         margin-left: 2em;
     }
 }
@@ -511,35 +531,46 @@ header {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
-  }
+}
 
-  #myImg:hover {opacity: 0.7;}
+#myImg:hover {
+    opacity: 0.7;
+}
 
-  /* The Modal (background) */
-  .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 30px; /* Location of the box */
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 30px;
+    /* Location of the box */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-  }
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+}
 
-  /* Modal Content (image) */
-  .modal-content {
+/* Modal Content (image) */
+.modal-content {
     margin: auto;
     display: block;
     width: 80%;
     max-width: 700px;
-  }
+}
 
-  /* Caption of Modal Image */
-  #caption {
+/* Caption of Modal Image */
+#caption {
     margin: auto;
     display: block;
     width: 80%;
@@ -548,39 +579,45 @@ header {
     color: #ccc;
     padding: 10px 0;
     height: 150px;
-  }
+}
 
-  /* Add Animation */
-  .modal-content, #caption {
+/* Add Animation */
+.modal-content,
+#caption {
     animation-name: zoom;
     animation-duration: 0.5s;
-  }
+}
 
-  @keyframes zoom {
-    from {transform: scale(0.1)}
-    to {transform: scale(1)}
-  }
+@keyframes zoom {
+    from {
+        transform: scale(0.1)
+    }
 
- /* Next Image */
- .nextImg {
-  position: absolute;
-  top: -15px;
-  left: 60%;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
- }
+    to {
+        transform: scale(1)
+    }
+}
 
- .nextImg:hover,
- .nextImg:focus {
-   color: #737373;
-   text-decoration: none;
-   cursor: pointer;
- }
+/* Next Image */
+.nextImg {
+    position: absolute;
+    top: -15px;
+    left: 60%;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
 
-  /* Previous Image */
-  .previousImg {
+.nextImg:hover,
+.nextImg:focus {
+    color: #737373;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Previous Image */
+.previousImg {
     position: absolute;
     top: -15px;
     left: 40%;
@@ -588,17 +625,17 @@ header {
     font-size: 40px;
     font-weight: bold;
     transition: 0.3s;
-   }
+}
 
-   .previousImg:hover,
-   .previousImg:focus {
-     color: #737373;
-     text-decoration: none;
-     cursor: pointer;
-   }
+.previousImg:hover,
+.previousImg:focus {
+    color: #737373;
+    text-decoration: none;
+    cursor: pointer;
+}
 
-  /* The Close Button */
-  .close {
+/* The Close Button */
+.close {
     position: absolute;
     top: 15px;
     right: 35px;
@@ -606,18 +643,111 @@ header {
     font-size: 40px;
     font-weight: bold;
     transition: 0.3s;
-  }
+}
 
-  .close:hover,
-  .close:focus {
+.close:hover,
+.close:focus {
     color: #737373;
     text-decoration: none;
     cursor: pointer;
-  }
+}
 
-  /* 100% Image Width on Smaller Screens */
-  @media only screen and (max-width: 700px){
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
     .modal-content {
-      width: 100%;
+        width: 100%;
     }
-  }
+}
+
+
+.gallery {
+    /* control the size */
+    --s: 150px;
+    /* control the gap */
+    --g: 15px;
+    /* control the scale factor */
+    --f: 2.5;
+
+    display: grid;
+    gap: var(--g);
+    width: calc(3*var(--s) + 3*var(--g));
+    aspect-ratio: 1;
+    grid-template-columns: repeat(3, auto);
+}
+
+.gallery>img {
+    width: 0;
+    height: 0;
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    filter: grayscale(80%);
+    transition: .35s linear;
+}
+
+.gallery img:hover {
+    filter: grayscale(0);
+    width: calc(var(--s)*var(--f));
+    height: calc(var(--s)*var(--f));
+}
+
+
+.new-form {
+    position: relative;
+    width: 1fr;
+    height: 1fr;
+    display: grid;
+    place-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 26px 42px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+input,
+button {
+    font-size: 16px;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 20px auto;
+    padding: 12px 20px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 13px 21px rgba(0, 0, 0, 0.05);
+}
+
+input:focus {
+    outline: none;
+}
+
+input::placeholder {
+    color: white;
+}
+
+button {
+    cursor: pointer;
+    background: #f64f59;
+    color: white;
+    transition: 0.5s;
+}
+
+button:hover {
+    background: #12c2e9;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    letter-spacing: 2px;
+    margin-top: 0;
+}

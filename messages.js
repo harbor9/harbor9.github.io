@@ -6,7 +6,7 @@ const plConfig = {
 
 const enConfig = {
     title: "Harbor 9 Apartment in Colberg",
-    welcome: "Dear Guests, we would like to invite you to spend your holiday in our apartment, which has been designed and equipped with guest comfort in mind. Moreover it has a huge corner balcony and a parking space in the underground garage. The location is close to the west beach and the beautiful observation deck, where you can enjoy unforgettable sunsets. A holiday in Harbor 9 Apartment provides you with pleasant stay and plenty of opportunities for seaside attractions.",
+    welcome: "Dear Guests, we would like to invite you to spend your holiday in our apartment, which has been designed in mind and is equipped for guest comfort. Moreover it has a huge corner balcony and a parking space in the underground garage. The location is close to the west beach and has the beautiful observation deck, where you can enjoy unforgettable sunsets. A holiday in Harbor 9 Apartment provides you a pleasant stay and plenty of opportunities for sea-side attractions.",
     goodbye: "Goodbye"
 }
 
