@@ -32,6 +32,13 @@ function setImage(src = "", sufix = "w.jpg") {
         document.getElementById("imgPreview").src = '';
     }
 
+    var spanPreviousImg = document.getElementsByClassName("previousImg")[0];
+
+    spanPreviousImg.onclick = function() {
+      console.log('PreviousImg clicked!');
+      setImage('https://live.staticflickr.com/1872/29548347767_27d80564ce_','c.jpg')
+    }
+
     // Get the <span> element that show the image on the right (previous)
 
     // Get the <span> element that show the image on the left (next)
