@@ -11,9 +11,11 @@ navLinks.forEach(link => {
     })
 })
 
-function setImage(src = "", sufix = "w.jpg") {
+function setImage(index, src = "", sufix = "w.jpg") {
 
     var modal = document.getElementById('myModal');
+    // index we need to set to be able to switch previous and next image
+    document.getElementById('currentIndex').setAttribute('value', index)
 
     // Get the image and insert it inside the modal - use its "alt" text as a caption
     var img = document.getElementById('myImg');
@@ -24,15 +26,30 @@ function setImage(src = "", sufix = "w.jpg") {
     captionText.innerHTML = img.alt;
 
     // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
+    var closeSpan = document.getElementsByClassName("close")[0];
 
     // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-        modal.style.display = "none";
-        document.getElementById("imgPreview").src = '';
+    closeSpan.onclick = function() {
+      modal.style.display = "none";
+      document.getElementById("imgPreview").src = '';
+      document.getElementById('currentIndex').setAttribute('value', '')
     }
 
-    // Get the <span> element that show the image on the right (previous)
+    //TODO extract to one method + add case from 0 to 39 and 39 + 0
+    var spanPreviousImg = document.getElementsByClassName("previousImg")[0];
+    spanPreviousImg.onclick = function() {
+      var currentIndex = document.getElementById('currentIndex').getAttribute('value')
+      const sImages = document.getElementsByTagName("s-image")
+      var sImage = sImages[--currentIndex]
+      setImage(sImage.indexImage, sImage.photoId, 'c.jpg')
+    }
 
-    // Get the <span> element that show the image on the left (next)
+    var spanNextImg = document.getElementsByClassName("nextImg")[0];
+    spanNextImg.onclick = function() {
+      var currentIndex = document.getElementById('currentIndex').getAttribute('value')
+      const sImages = document.getElementsByTagName("s-image")
+      var sImage = sImages[++currentIndex]
+      setImage(sImage.indexImage, sImage.photoId, 'c.jpg')
+    }
+
 }
