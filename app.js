@@ -35,20 +35,21 @@ function setImage(index, src = "", sufix = "w.jpg") {
       document.getElementById('currentIndex').setAttribute('value', '')
     }
 
+    //TODO extract to one method + add case from 0 to 39 and 39 + 0
     var spanPreviousImg = document.getElementsByClassName("previousImg")[0];
-
     spanPreviousImg.onclick = function() {
       var currentIndex = document.getElementById('currentIndex').getAttribute('value')
       const sImages = document.getElementsByTagName("s-image")
-      var sImage = sImages[currentIndex-1]
+      var sImage = sImages[--currentIndex]
       setImage(sImage.indexImage, sImage.photoId, 'c.jpg')
     }
 
     var spanNextImg = document.getElementsByClassName("nextImg")[0];
     spanNextImg.onclick = function() {
-      setImage('https://live.staticflickr.com/1872/29548347767_27d80564ce_','c.jpg')
+      var currentIndex = document.getElementById('currentIndex').getAttribute('value')
+      const sImages = document.getElementsByTagName("s-image")
+      var sImage = sImages[++currentIndex]
+      setImage(sImage.indexImage, sImage.photoId, 'c.jpg')
     }
-    // Get the <span> element that show the image on the right (previous)
 
-    // Get the <span> element that show the image on the left (next)
 }
