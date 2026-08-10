@@ -1,154 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Harbor9</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Harbor 9 — a modern seaside apartment for rent in Kołobrzeg, on the Polish Baltic coast.">
+    <title>Harbor 9 — Apartment in Kołobrzeg</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
-    <link rel="stylesheet" href="style.css"/>
+    <!-- ===== Header / navigation ===== -->
+    <header class="site-header">
+        <a href="#about" class="brand">Harbor&nbsp;9</a>
 
-    <button class="nav-toggle" aria-label="toggle navigation">
-        <span class="hamburger"></span>
-    </button>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+            <span class="hamburger"></span>
+        </button>
 
-    <nav class="nav">
-        <ul class="nav__list">
-            <li class="nav_item"><a href="#home" class="nav__link">Home</a></li>
-            <li class="nav_item"><a href="#photos" class="nav__link">Photos</a></li>
-            <li class="nav_item"><a href="#form" class="nav__link">Form</a></li>
-            <li class="nav_item"><a href="#calendar" class="nav__link">Calendar</a></li>
-            <li class="nav_item"><a href="#where" class="nav__link">Where we are</a></li>
-        </ul>
-    </nav>
-    <section id="home">
-        <h1 data-i18n>title</h1>
-        <ol>
-            <h4 style="text-align: justify;" data-i18n >welcome</h4>
-            <h4 data-i18n>goodbye</h4>
-        </ol>
-    </section>
+        <nav class="nav" id="primary-nav">
+            <ul class="nav__list">
+                <li><a class="nav__link" href="#about" data-i18n="nav.about">About</a></li>
+                <li><a class="nav__link" href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
+                <li><a class="nav__link" href="#booking" data-i18n="nav.form">Booking</a></li>
+                <li><a class="nav__link" href="#where" data-i18n="nav.where">Where we are</a></li>
+            </ul>
+            <harbor-lang-switch></harbor-lang-switch>
+        </nav>
+    </header>
 
-    <section class="photos" id="photos">
-        <div class="container">
-        <!--//TODO https://www.youtube.com/watch?v=t6CBKf8K_Ac&feature=youtu.be&t=1747-->
-        Pytania/Questions/Fragen -> <a href="mailto:harbor9@proton.me">harbor9@proton.me</a><br><br>
-        </div>
+    <main>
+        <!-- ===== About ===== -->
+        <section id="about" class="section about">
+            <div class="about__inner">
+                <p class="eyebrow" data-i18n="about.subtitle">Your seaside home on the Polish Baltic coast</p>
+                <h1 data-i18n="about.title">Harbor 9 Apartment in Kołobrzeg</h1>
+                <p class="about__text" data-i18n="about.text">Dear guests…</p>
+                <a class="btn" href="#booking" data-i18n="about.cta">Request your dates</a>
+            </div>
+        </section>
 
-        <input type="hidden" name="currentIndex" id="currentIndex" value="" />
+        <!-- ===== Gallery ===== -->
+        <section id="gallery" class="section gallery">
+            <header class="section__head">
+                <h2 data-i18n="gallery.title">Gallery</h2>
+                <p class="section__sub" data-i18n="gallery.subtitle">Take a look around the apartment</p>
+            </header>
+            <harbor-gallery></harbor-gallery>
+        </section>
 
-        <div class="container">
-          <s-image indexImage="0" class="big" photoId="https://live.staticflickr.com/1889/42676514890_a460f56471_" previewSize="w"></s-image>
-          <s-image indexImage="1" class="vertical" photoId="https://live.staticflickr.com/1878/30616610988_da21ba190c_"></s-image>
-          <s-image indexImage="2" class="big" photoId="https://live.staticflickr.com/1894/42676517930_ca2a632e1a_"></s-image>
-          <s-image indexImage="3" class="big" photoId="https://live.staticflickr.com/1894/43576608985_49f0bbb202_"></s-image>
-          <s-image indexImage="4" class="vertical" photoId="https://live.staticflickr.com/1884/43767841034_bccb8b57a5_"></s-image>
-          <s-image indexImage="5" class="big" photoId="https://live.staticflickr.com/1872/29548347767_27d80564ce_"></s-image>
-          <s-image indexImage="6" class="big" photoId="https://live.staticflickr.com/1900/44485863931_17fbf65747_"></s-image>
-          <s-image indexImage="7" class="big" photoId="https://live.staticflickr.com/1848/44485648931_9f18b00033_"></s-image>
-          <s-image indexImage="8" class="big" photoId="https://live.staticflickr.com/1856/44436869102_4a2bef59a5_"></s-image>
-          <s-image indexImage="9" class="vertical" photoId="https://live.staticflickr.com/1886/43767664394_b4816288c1_"></s-image>
-          <s-image indexImage="10" class="vertical" photoId="https://live.staticflickr.com/1882/42676745410_9ae5e6a948_"></s-image>
-          <s-image indexImage="11" class="vertical" photoId="https://live.staticflickr.com/1876/42676540860_4c7fe57d45_"></s-image>
-          <s-image indexImage="12" class="vertical" photoId="https://live.staticflickr.com/1844/43767673154_f00304f2c4_"></s-image>
-          <s-image indexImage="13" class="vertical" photoId="https://live.staticflickr.com/1871/44436877992_5096b0cf9f_"></s-image>
-          <s-image indexImage="14" class="big" photoId="https://live.staticflickr.com/1858/30616458328_658bbdb39c_"></s-image>
-          <s-image indexImage="15" class="big" photoId="https://live.staticflickr.com/1886/44436888712_94aaf909af_"></s-image>
-          <s-image indexImage="16" class="vertical" photoId="https://live.staticflickr.com/1844/30616468898_743bcd0419_"></s-image>
-          <s-image indexImage="17" class="vertical" photoId="https://live.staticflickr.com/1850/30616728248_a03f10253b_"></s-image>
-          <s-image indexImage="18" class="big" photoId="https://live.staticflickr.com/1862/42676554940_72e081d11d_"></s-image>
-          <s-image indexImage="19" class="big" photoId="https://live.staticflickr.com/1872/43576704185_c52fcd057a_"></s-image>
-          <s-image indexImage="20" class="big" photoId="https://live.staticflickr.com/1876/44436685062_7769bc6378_"></s-image>
-          <s-image indexImage="21" class="big" photoId="https://live.staticflickr.com/1848/43767954664_720ee85d59_"></s-image>
-          <s-image indexImage="22" class="vertical" photoId="https://live.staticflickr.com/1861/30616482898_8b08477a26_"></s-image>
-          <s-image indexImage="23" class="big" photoId="https://live.staticflickr.com/1868/30616489898_e4478d3611_"></s-image>
-          <s-image indexImage="24" class="big" photoId="https://live.staticflickr.com/1853/43576495335_7c64ac45c5_"></s-image>
-          <s-image indexImage="25" class="vertical" photoId="https://live.staticflickr.com/1877/43576499485_2c466b1f4d_"></s-image>
-          <s-image indexImage="26" class="vertical" photoId="https://live.staticflickr.com/1842/29548684177_cdf86033a3_"></s-image>
-          <s-image indexImage="27" class="big" photoId="https://live.staticflickr.com/1876/29548425457_1e78b39764_"></s-image>
-          <s-image indexImage="28" class="big" photoId="https://live.staticflickr.com/1879/29548691227_b09def5b97_"></s-image>
-          <s-image indexImage="29" class="vertical" photoId="https://live.staticflickr.com/1859/43576745355_036794f12e_"></s-image>
-          <s-image indexImage="30" class="vertical" photoId="https://live.staticflickr.com/1857/43576509245_060a5f6641_"></s-image>
-          <s-image indexImage="31" class="vertical" photoId="https://live.staticflickr.com/1859/43576789665_8bb5b2b717_"></s-image>
-          <s-image indexImage="32" class="vertical" photoId="https://live.staticflickr.com/1897/44485720601_25cc00564c_"></s-image>
-          <s-image indexImage="33" class="big" photoId="https://live.staticflickr.com/1872/44485731411_d7d0dd9ee9_"></s-image>
-          <s-image indexImage="34" class="big" photoId="https://live.staticflickr.com/1852/43576797845_d001f1810c_"></s-image>
-          <s-image indexImage="35" class="vertical" photoId="https://live.staticflickr.com/1853/30616566608_d089746e63_"></s-image>
-          <s-image indexImage="36" class="vertical" photoId="https://live.staticflickr.com/1855/44485753651_f199c95487_"></s-image>
-          <s-image indexImage="37" class="vertical" photoId="https://live.staticflickr.com/1851/30616808098_3596da8238_"></s-image>
-          <s-image indexImage="38" class="big" photoId="https://live.staticflickr.com/1874/43767996374_c8ed415b2e_" previewSize="q"></s-image>
-          <s-image indexImage="39" class="big" photoId="https://live.staticflickr.com/1894/43767778894_d720f1bee1_"></s-image>
-        </div>
-    </section>
+        <!-- ===== Booking form ===== -->
+        <section id="booking" class="section booking">
+            <header class="section__head">
+                <h2 data-i18n="form.title">Booking request</h2>
+                <p class="section__sub" data-i18n="form.subtitle">Send us your preferred dates and we will get back to you.</p>
+            </header>
 
-    <section class="form" id="form">
-        <div>
-            <h2>Send a Request</h2>
-        </div>
-        <div>
-            <form>
-                <div>
-                    <label for="name">Name:</label>
-                    <input id="name" required minlength="3" autocomplete="off" placeholder="e.g. Joe Bloggs" title="Name?"/>
+            <form class="form" id="booking-form" novalidate>
+                <div class="field">
+                    <label for="name" data-i18n="form.name">Name</label>
+                    <input id="name" name="name" type="text" required minlength="3" maxlength="100" autocomplete="name"
+                           data-i18n-placeholder="form.name.ph">
                 </div>
-                <div>
-                    <label for="dateFrom">Date From:</label>
-                    <input id="dateFrom" required type="date" title="Please make sure the date is in the future"/>
+
+                <div class="form__row">
+                    <div class="field">
+                        <label for="email" data-i18n="form.email">Email</label>
+                        <input id="email" name="email" type="email" required maxlength="100" autocomplete="email"
+                               data-i18n-placeholder="form.email.ph">
+                    </div>
+                    <div class="field">
+                        <label for="phone" data-i18n="form.phone">Phone number</label>
+                        <input id="phone" name="phone" type="tel" maxlength="30" autocomplete="tel"
+                               data-i18n-placeholder="form.phone.ph">
+                    </div>
                 </div>
-                <div>
-                    <label for="dateTo">Date To:</label>
-                    <input id="dateTo" required type="date" title="Please make sure the date is after Date From."/>
+
+                <div class="form__row">
+                    <div class="field">
+                        <label for="dateFrom" data-i18n="form.dateFrom">Date from</label>
+                        <input id="dateFrom" name="dateFrom" type="date" required>
+                    </div>
+                    <div class="field">
+                        <label for="dateTo" data-i18n="form.dateTo">Date to</label>
+                        <input id="dateTo" name="dateTo" type="date" required>
+                    </div>
                 </div>
-                <div>
-                    <label for="email">Email</label>
-                    <input id="email" required type="email" autocomplete="off" placeholder="Please provide your email" title="We will contact you on this address"/>
+
+                <div class="field">
+                    <label for="comments" data-i18n="form.comments">Additional comments</label>
+                    <textarea id="comments" name="comments" rows="4" maxlength="500"
+                              data-i18n-placeholder="form.comments.ph"></textarea>
                 </div>
-                <div>
-                    <label for="phone">Phone Number</label>
-                    <input id="phone" required type="tel" placeholder="Please provide your mobile number" title="Please make sure the input conforms to pattern ${tokenPrefixAllowedPattern}"/>
-                </div>
-                <div>
-                    <label for="comments">Any Comments?</label>
-                    <input id="comments" maxlength="200" minlength="5" placeholder="Message for us?" title="Please make sure the input conforms to pattern ${tokenPrefixAllowedPattern}"/>
-                </div>
-                <div>
-                    <button id="send" type="submit" >Submit</button>
-                </div>
+
+                <button class="btn" type="submit" data-i18n="form.submit">Send request</button>
+                <p class="form__note" data-i18n="form.note">Prefer email? Write to us at harbor9@proton.me</p>
             </form>
-        </div>
-    </section>
+        </section>
 
-    <section id="where">
-        <h2>Where we are</h2>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2335.254254134268!2d15.550267315512054!3d54.17557281997611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470015a0e8f17799%3A0x81dbcf1436904556!2sRybacka%2011G%2C%2078-100%20Ko%C5%82obrzeg%2C%20Poland!5e0!3m2!1sen!2sde!4v1582467204034!5m2!1sen!2sde" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-    </section>
+        <!-- ===== Where we are ===== -->
+        <section id="where" class="section where">
+            <header class="section__head">
+                <h2 data-i18n="where.title">Where we are</h2>
+                <p class="section__sub" data-i18n="where.subtitle">Rybacka 11G, 78-100 Kołobrzeg, Poland</p>
+            </header>
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2335.254254134268!2d15.550267315512054!3d54.17557281997611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470015a0e8f17799%3A0x81dbcf1436904556!2sRybacka%2011G%2C%2078-100%20Ko%C5%82obrzeg%2C%20Poland!5e0!3m2!1sen!2sde!4v1582467204034!5m2!1sen!2sde"
+                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    data-i18n-title="where.mapTitle" title="Map showing the location of Harbor 9 apartment"></iframe>
+            </div>
+        </section>
+    </main>
 
-
-<!-- <div class="inbound-form-wrapper" id="form_983" data-path="https://app.99inbound.com/i/6375e077-2126-48f3-8002-ac6c44a856f8" data-token="mOtkVSHbBrmdEgg1ut1Q6gtt"></div> -->
-
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-        <span class="close">&times;</span>
-        <span class="previousImg">&leftarrow;</span>
-        <span class="nextImg">&rightarrow;</span>
-        <img class="modal-content" id="imgPreview">
-        <div id="caption"></div>
-    </div>
-
-<script src="app.js"></script>
-<script src="messages.js"></script>
-<script src="elements.js" type="module"></script>
-
-
-<!-- Only include this once in your webpage -->
-<script type="text/javascript" src="https://app.99inbound.com/99inbound.js"></script>
-
-    <footer class="footer">
-        <a href="mailto:harbor9@proton.me" class="footer__link">harbor9@proton.me</a>
+    <!-- ===== Footer ===== -->
+    <footer class="site-footer">
+        <span data-i18n="footer.contact">Questions? Write to us:</span>
+        <a href="mailto:harbor9@proton.me">harbor9@proton.me</a>
     </footer>
 
+    <script src="i18n.js"></script>
+    <script src="components.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
