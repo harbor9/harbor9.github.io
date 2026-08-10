@@ -337,13 +337,20 @@ h1, h2, h3 {
     }
 
     .nav {
+        /* The header uses backdrop-filter, which makes it the containing
+           block for this fixed element — so size explicitly to the viewport
+           instead of relying on inset:0 (which would only fill the header). */
         position: fixed;
-        inset: 0;
         top: 0;
+        right: 0;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
         flex-direction: column;
         justify-content: center;
         gap: 2rem;
         background: var(--clr-surface);
+        z-index: 150;
         transform: translateX(100%);
         transition: transform 0.3s cubic-bezier(0.5, 0, 0.5, 1);
     }

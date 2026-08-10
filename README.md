@@ -29,5 +29,19 @@ Harbor9 Appartment Page https://harbor9.github.io/
 
 # Local development
 
-* nvm use v10.16.3
-* browser-sync --server . --files . --no-ui --no-notify
+This is a static site (plain HTML/CSS/JS), so any static file server works.
+
+Quickest — no dependencies (Python 3):
+
+```
+python3 -m http.server 8000
+```
+
+Then open http://localhost:8000/
+
+With live reload (browser-sync):
+
+```
+nvm use v10.16.3
+browser-sync --server . --files . --no-ui --no-notify
+```
