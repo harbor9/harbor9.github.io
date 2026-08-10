@@ -1,168 +1,60 @@
-const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelectorAll('.nav__link')
+// Site chrome: mobile navigation toggle and booking-form behaviour.
 
-navToggle.addEventListener('click', () => {
-    document.body.classList.toggle('nav-open');
+document.addEventListener("DOMContentLoaded", () => {
+  // --- Mobile navigation ----------------------------------------------------
+  const navToggle = document.querySelector(".nav-toggle");
+  const navLinks = document.querySelectorAll(".nav__link");
+
+  function closeNav() {
+    document.body.classList.remove("nav-open");
+    navToggle.setAttribute("aria-expanded", "false");
+  }
+
+  navToggle.addEventListener("click", () => {
+    const open = document.body.classList.toggle("nav-open");
+    navToggle.setAttribute("aria-expanded", String(open));
+  });
+
+  navLinks.forEach((link) => link.addEventListener("click", closeNav));
+
+  // --- Booking form ---------------------------------------------------------
+  // Sending is not wired up yet (static site). For now we validate the input,
+  // keep the guest's data, and confirm on screen. A real transport (email
+  // service / form backend) can be plugged into submit() later.
+  const form = document.getElementById("booking-form");
+  const dateFrom = document.getElementById("dateFrom");
+  const dateTo = document.getElementById("dateTo");
+
+  if (form) {
+    // No dates in the past: set each picker's minimum to today (local time).
+    const now = new Date();
+    const pad = (n) => String(n).padStart(2, "0");
+    const today = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+    dateFrom.min = today;
+    dateTo.min = today;
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      // Basic cross-field date sanity: "to" must be after "from".
+      if (dateFrom.value && dateTo.value && dateTo.value <= dateFrom.value) {
+        dateTo.setCustomValidity("range");
+      } else {
+        dateTo.setCustomValidity("");
+      }
+
+      if (!form.reportValidity()) return;
+
+      // TODO: connect a real submission transport here.
+      console.log("Booking request:", Object.fromEntries(new FormData(form)));
+    });
+
+    // When "from" changes, "to" cannot be earlier than it. Clear any stale
+    // custom message as soon as the user edits either date.
+    dateFrom.addEventListener("input", () => {
+      dateTo.min = dateFrom.value || today;
+      dateTo.setCustomValidity("");
+    });
+    dateTo.addEventListener("input", () => dateTo.setCustomValidity(""));
+  }
 });
-
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        document.body.classList.remove('nav-open');
-    })
-})
-
-// Gallery Management Class
-class ImageGallery {
-    constructor() {
-        this.images = [];
-        this.currentIndex = 0;
-        this.modal = null;
-        this.modalImg = null;
-        this.captionText = null;
-        this.isInitialized = false;
-
-        this.init();
-    }
-
-    init() {
-        // Wait for DOM to be ready
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => this.setupGallery());
-        } else {
-            this.setupGallery();
-        }
-    }
-
-    setupGallery() {
-        // Collect all image data from s-image elements
-        const sImageElements = document.getElementsByTagName("s-image");
-        this.images = Array.from(sImageElements).map(element => ({
-            index: parseInt(element.getAttribute("indexImage")),
-            photoId: element.getAttribute("photoId"),
-            class: element.getAttribute("class") || "big",
-            previewSize: element.getAttribute("previewSize") || "n"
-        }));
-
-        // Sort images by index to ensure correct order
-        this.images.sort((a, b) => a.index - b.index);
-
-        // Get modal elements
-        this.modal = document.getElementById('myModal');
-        this.modalImg = document.getElementById("imgPreview");
-        this.captionText = document.getElementById("caption");
-
-        // Setup event listeners (only once)
-        this.setupEventListeners();
-        this.isInitialized = true;
-    }
-
-    setupEventListeners() {
-        // Close modal events
-        const closeSpan = document.getElementsByClassName("close")[0];
-        closeSpan.addEventListener('click', () => this.closeModal());
-
-        // Navigation events
-        const previousBtn = document.getElementsByClassName("previousImg")[0];
-        const nextBtn = document.getElementsByClassName("nextImg")[0];
-
-        previousBtn.addEventListener('click', () => this.previousImage());
-        nextBtn.addEventListener('click', () => this.nextImage());
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (this.modal.style.display === "block") {
-                switch(e.key) {
-                    case 'ArrowLeft':
-                        e.preventDefault();
-                        this.previousImage();
-                        break;
-                    case 'ArrowRight':
-                        e.preventDefault();
-                        this.nextImage();
-                        break;
-                    case 'Escape':
-                        e.preventDefault();
-                        this.closeModal();
-                        break;
-                }
-            }
-        });
-
-        // Click outside modal to close
-        this.modal.addEventListener('click', (e) => {
-            if (e.target === this.modal) {
-                this.closeModal();
-            }
-        });
-    }
-
-    openImage(index) {
-        if (!this.isInitialized) {
-            console.error('Gallery not initialized yet');
-            return;
-        }
-
-        // Find image by index
-        const imageIndex = this.images.findIndex(img => img.index === parseInt(index));
-        if (imageIndex === -1) {
-            console.error('Image not found:', index);
-            return;
-        }
-
-        this.currentIndex = imageIndex;
-        this.displayCurrentImage();
-        this.modal.style.display = "block";
-    }
-
-    displayCurrentImage() {
-        const image = this.images[this.currentIndex];
-        if (!image) return;
-
-        // Show loading state
-        this.modalImg.style.opacity = '0.5';
-
-        // Set image source
-        this.modalImg.src = image.photoId + 'c.jpg';
-
-        // Update caption with image counter
-        this.captionText.innerHTML = `Image ${this.currentIndex + 1} of ${this.images.length}`;
-
-        // Remove loading state when image loads
-        this.modalImg.onload = () => {
-            this.modalImg.style.opacity = '1';
-        };
-
-        // Update hidden input for compatibility
-        document.getElementById('currentIndex').setAttribute('value', image.index);
-    }
-
-    previousImage() {
-        if (this.images.length === 0) return;
-
-        // Wrap around to last image if at first
-        this.currentIndex = this.currentIndex > 0 ? this.currentIndex - 1 : this.images.length - 1;
-        this.displayCurrentImage();
-    }
-
-    nextImage() {
-        if (this.images.length === 0) return;
-
-        // Wrap around to first image if at last
-        this.currentIndex = this.currentIndex < this.images.length - 1 ? this.currentIndex + 1 : 0;
-        this.displayCurrentImage();
-    }
-
-    closeModal() {
-        this.modal.style.display = "none";
-        this.modalImg.src = '';
-        document.getElementById('currentIndex').setAttribute('value', '');
-    }
-}
-
-// Initialize gallery
-const gallery = new ImageGallery();
-
-// Legacy function for compatibility with existing s-image onclick handlers
-function setImage(index, src = "", suffix = "w.jpg") {
-    gallery.openImage(index);
-}
